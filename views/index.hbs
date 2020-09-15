@@ -8,6 +8,15 @@
   <body>
     <h1> {{title}} </h1>
     <p>Welcome to  {{title}} </p>
+    <label>
+         From:
+       </label>
+      <input type="date">
+
+      <label>
+        To:
+      </label>
+      <input type="date">
 
      <canvas id="my-chart"></canvas>
 
@@ -15,3 +24,5 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/javascripts/financial-data.js" charset="utf-8"></script>
 </html>
+
+{{!--?start=<VALUE>&end=<VALUE> Allows data to be returned for a specific date range. Must be listed as a pair of start and end parameters, with dates supplied in the YYYY-MM-DD format, e.g. 2013-09-01 for September 1st, 2013.--}} 
