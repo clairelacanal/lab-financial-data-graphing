@@ -1,8 +1,13 @@
 
-const url = `https://api.coindesk.com/v1/bpi/historical/close.json`;
- 
-axios
-  .get(url)
+
+
+
+const getBitcoinInfo = () => {
+  let startDate = document.querySelector('#start').value;
+  let endDate = document.querySelector('#end').value;
+
+  axios
+  .get(`https://api.coindesk.com/v1/bpi/historical/close.json$?start=${startDate}&end=${endDate}`)
   .then(response => {
     console.log(response.data)
     printData(response.data)
@@ -33,9 +38,11 @@ axios
     })
 
   }
+}
 
-  
+getBitcoinInfo()
+
+document.getElementById('start').addEventListener("change", getBitcoinInfo);
+document.getElementById('end').addEventListener("change", getBitcoinInfo);
  
 
-
- 
